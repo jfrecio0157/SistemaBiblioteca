@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface LibroRepository extends JpaRepository<Libro, String> {
+public interface LibroRepository extends JpaRepository<Libro, Integer> {
     Optional<Libro> findByTitulo(String titulo); //Devuelve un Optional para poder manejarlo en caso de que no exista
 
     //Devuelve el libro y sus autores
@@ -17,6 +17,7 @@ public interface LibroRepository extends JpaRepository<Libro, String> {
     Optional<Libro> findLibroConAutores(@Param("isbn") String isbn);
 
     Optional<Libro> deleteByIsbn (String isbn);
+    Optional<Libro> findByIsbn (String isbn);
 
 
 }

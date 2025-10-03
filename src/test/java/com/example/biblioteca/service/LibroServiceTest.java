@@ -148,7 +148,7 @@ public class LibroServiceTest {
         String isbn = "1234";
 
         //Act
-        libroServiceMock.eliminarLibroById(isbn);
+        libroServiceMock.eliminarLibroByIsbn(isbn);
 
         //Assert
         verify(libroRepositoryMock).deleteByIsbn(anyString());

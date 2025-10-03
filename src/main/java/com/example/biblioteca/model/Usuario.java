@@ -19,7 +19,7 @@ public class Usuario {
     @Column(name = "id", nullable = false)
     private int id;
 
-    @Column (name = "nombre", nullable = false, unique = false)
+    @Column (name = "nombre", nullable = false, unique = true)
     private String nombre;
 
     @Column (name = "email", nullable = false, unique = false)
