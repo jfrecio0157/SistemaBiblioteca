@@ -1,5 +1,7 @@
 package com.example.biblioteca.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,7 +21,7 @@ public class Usuario {
     @Column(name = "id", nullable = false)
     private int id;
 
-    @Column (name = "nombre", nullable = false, unique = false)
+    @Column (name = "nombre", nullable = false, unique = true)
     private String nombre;
 
     @Column (name = "email", nullable = false, unique = false)
@@ -32,6 +34,8 @@ public class Usuario {
 
     //Un usuario puede tener uno o varios prestamos
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    //@JsonIgnoreProperties("usuario") // Evita que Prestamo serialice el Usuario
+    @JsonManagedReference
     private List<Prestamo> prestamos;
 
 }

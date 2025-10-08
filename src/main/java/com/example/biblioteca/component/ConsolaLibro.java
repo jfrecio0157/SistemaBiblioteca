@@ -109,7 +109,7 @@ public class ConsolaLibro {
 
         //Eliminación del libro
         try {
-            libroService.eliminarLibroById(libroCompleto.getIsbn());
+            libroService.eliminarLibroByIsbn(libroCompleto.getIsbn());
             commonUtil.mostrarMensaje("El libro ha sido eliminado correctamente.");
         } catch (Exception e) {
             commonUtil.mostrarMensajeError("baja libro", e);

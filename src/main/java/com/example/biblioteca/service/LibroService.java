@@ -11,9 +11,7 @@ import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Validator;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @Service
 @Transactional
@@ -56,7 +54,11 @@ public class LibroService {
        return libro.orElse(null);
     }
 
-    public void eliminarLibroById (String isbn) {
+    public void eliminarLibroById (int id) {
+        libroRepository.deleteById(id);
+    }
+
+    public void eliminarLibroByIsbn (String isbn) {
         libroRepository.deleteByIsbn(isbn);
     }
 

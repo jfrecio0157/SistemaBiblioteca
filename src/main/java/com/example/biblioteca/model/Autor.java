@@ -20,7 +20,7 @@ public class Autor {
     @Column(name = "id", nullable = false)
     private int id;
 
-    @Column (name = "nombre", nullable = false, unique = false)
+    @Column (name = "nombre", nullable = false, unique = true)
     private String nombre;
 
     @ManyToMany(mappedBy = "autores", cascade = CascadeType.ALL)

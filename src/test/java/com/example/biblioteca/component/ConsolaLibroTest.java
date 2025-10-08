@@ -169,7 +169,7 @@ public class ConsolaLibroTest {
         consolaSpy.procesarBajaLibro();
 
         //Assert
-        verify(libroService).eliminarLibroById("1234");
+        verify(libroService).eliminarLibroByIsbn("1234");
         verify(commonUtil).mostrarMensaje("El libro ha sido eliminado correctamente.");
 
         verify(commonUtil,never()).mostrarMensajeError(anyString(), any());
@@ -191,7 +191,7 @@ public class ConsolaLibroTest {
 
         //Verificamos que no se llama a ningún método posterior
         verify(libroService,never()).buscarLibroByIsbn(anyString());
-        verify(libroService,never()).eliminarLibroById(anyString());
+        verify(libroService,never()).eliminarLibroByIsbn(anyString());
         verify(materialBibliotecaService,never()).obtenerMaterialDelPrestamoByTitulo(anyString());
 
         verify(commonService,never()).preguntarSiBorrar();
@@ -226,7 +226,7 @@ public class ConsolaLibroTest {
         verify(commonUtil, times(1)).mostrarMensaje("El libro \"TITULO LIBRO\" no se puede eliminar. Esta prestado.");
         //Verificamos que no se llama a ningún método posterior
         verify(commonService,never()).preguntarSiBorrar();
-        verify(libroService,never()).eliminarLibroById(anyString());
+        verify(libroService,never()).eliminarLibroByIsbn(anyString());
         verify(commonUtil,never()).mostrarMensajeError(anyString(), any());
 
     }
@@ -257,7 +257,7 @@ public class ConsolaLibroTest {
         // Para asegurar que mostrarMensaje solo se llama una vez. La segunda, que corresponde al try, no se llama
         verify(commonUtil, times(1)).mostrarMensaje("El libro \"TITULO LIBRO\" no ha sido eliminado.");
         //Verificamos que no se llama a ningún método posterior
-        verify(libroService,never()).eliminarLibroById(anyString());
+        verify(libroService,never()).eliminarLibroByIsbn(anyString());
         verify(commonUtil,never()).mostrarMensajeError(anyString(), any());
 
     }
@@ -284,7 +284,7 @@ public class ConsolaLibroTest {
 
         // Simulamos una excepción general al insertar
         Exception exception = new RuntimeException("Error inesperado");
-        doThrow(exception).when(libroService).eliminarLibroById("1234");
+        doThrow(exception).when(libroService).eliminarLibroByIsbn("1234");
 
         //Act
         consolaSpy.procesarBajaLibro();

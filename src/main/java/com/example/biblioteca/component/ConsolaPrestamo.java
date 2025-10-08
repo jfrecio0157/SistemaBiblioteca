@@ -129,7 +129,7 @@ public class ConsolaPrestamo {
             //Actualizar disponibilidad
             materialBibliotecaService.actualizarDisponible(materialBiblioteca, materialBiblioteca.getDisponibles() + 1);
 
-            //Actualizar prestamo como no prestado.
+            //Devolver un préstamo -> Actualizar préstamo como no prestado.
             prestamoService.desactivarPrestamoConMaterial(idPrestamosList, materialBiblioteca.getId());
 
             commonUtil.mostrarMensaje("Préstamo devuelto");

@@ -1,11 +1,17 @@
 package com.example.biblioteca.service;
 
+import com.example.biblioteca.dto.LibroDTO;
+import com.example.biblioteca.dto.UsuarioDTO;
 import com.example.biblioteca.model.Autor;
+import com.example.biblioteca.model.Libro;
+import com.example.biblioteca.model.Prestamo;
+import com.example.biblioteca.model.Usuario;
 import com.example.biblioteca.repository.AutorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -35,4 +41,5 @@ public class AutorService {
             autorRepository.deleteById(id);
         }
     }
+
 }

@@ -262,12 +262,13 @@ class LibroServiceIT {
         libroRepository.save(libro);
 
         //Act
-        libroService.eliminarLibroById(isbn);
+        libroService.eliminarLibroByIsbn(isbn);
 
         //Assert
         Libro libroBuscado  = libroService.buscarLibroByIsbn("1578");
         assertNull(libroBuscado);
         assertFalse(libroRepository.existsById("1578")); //El id es el Isbn
+        assertFalse(libroRepository.ex);
     }
 }
 
