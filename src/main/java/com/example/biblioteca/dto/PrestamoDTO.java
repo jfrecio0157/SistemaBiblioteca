@@ -1,5 +1,7 @@
 package com.example.biblioteca.dto;
 
+import com.example.biblioteca.model.MaterialBiblioteca;
+import com.example.biblioteca.model.Usuario;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,13 +11,11 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class LibroDTO {
+public class PrestamoDTO {
     private int id;
-    private String isbn;
     private int añoPublicacion;
-    private String titulo;
-    private List<String> nombresAutores;
-    private int totales;
-    private int disponibles;
-}
+    private String nombreUsuario;
+    private List<String> tituloMateriales;
+    private boolean activos;
 
+}

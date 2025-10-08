@@ -1,5 +1,6 @@
 package com.example.biblioteca.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -31,6 +32,7 @@ public abstract class MaterialBiblioteca {
     protected Integer disponibles;
 
     @ManyToMany(mappedBy = "materiales", cascade = CascadeType.ALL)
+    @JsonIgnore // ← evita serializar los préstamos desde el material
     private List<Prestamo> prestamos;
 
 

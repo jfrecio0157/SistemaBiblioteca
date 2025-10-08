@@ -4,17 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class LibroDTO {
+public class RevistaDTO {
     private int id;
-    private String isbn;
-    private int añoPublicacion;
     private String titulo;
-    private List<String> nombresAutores;
+    private int numeroEdicion;
+    private String periodicidad;
     private int totales;
     private int disponibles;
 }
