@@ -1065,7 +1065,7 @@ public class ConsolaPrestamoTest {
 
         Prestamo prestamoMock = new Prestamo();
         prestamoMock.setUsuario(usuarioMock);
-        prestamoMock.setAñoPublicacion(LocalDate.now().getYear());
+        prestamoMock.setFechaPrestamo(LocalDate.now());
         prestamoMock.setMateriales(List.of(materialMock));
         prestamoMock.setActivo(true);
 
@@ -1088,7 +1088,7 @@ public class ConsolaPrestamoTest {
 
         Prestamo prestamoMock = new Prestamo();
         prestamoMock.setUsuario(usuarioMock);
-        prestamoMock.setAñoPublicacion(LocalDate.now().getYear());
+        prestamoMock.setFechaPrestamo(LocalDate.now());
         prestamoMock.setMateriales(List.of(materialMock));
         prestamoMock.setActivo(true);
 
@@ -1142,7 +1142,7 @@ public class ConsolaPrestamoTest {
 
         Prestamo prestamoMock = new Prestamo();
         prestamoMock.setUsuario(usuarioMock);
-        prestamoMock.setAñoPublicacion(LocalDate.now().getYear());
+        prestamoMock.setFechaPrestamo(LocalDate.now());
         prestamoMock.setMateriales(List.of(materialMock));
         prestamoMock.setActivo(true);
 
