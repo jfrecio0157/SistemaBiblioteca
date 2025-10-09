@@ -1,13 +1,13 @@
 package com.example.biblioteca.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -22,10 +22,8 @@ public class Prestamo {
     @Column(name = "id", nullable = false)
     private int id;
 
-
-    @Column(name = "añoPublicacion", nullable = false)
-    private int añoPublicacion;
-
+    @Column(name = "fecha_prestamo", nullable = false)
+    private LocalDate fechaPrestamo;
 
     @ManyToOne
     //@JsonIgnoreProperties("prestamos") // Evita que Usuario serialice sus Prestamos

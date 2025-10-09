@@ -12,6 +12,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.annotation.Commit;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,7 +55,7 @@ class PrestamoServiceIT {
 
 
         Prestamo prestamo = new Prestamo();
-        prestamo.setAñoPublicacion(2025);
+        prestamo.setFechaPrestamo(LocalDate.now());
         prestamo.setActivo(true);
         prestamo.setUsuario(usuario);
         prestamo.setMateriales(List.of(libro));
@@ -88,7 +89,7 @@ class PrestamoServiceIT {
 
 
         Prestamo prestamo = new Prestamo();
-        prestamo.setAñoPublicacion(2025);
+        prestamo.setFechaPrestamo(LocalDate.now());
         prestamo.setActivo(true);
         prestamo.setUsuario(usuario);
         prestamo.setMateriales(List.of(libro));
@@ -123,7 +124,7 @@ class PrestamoServiceIT {
 
 
         Prestamo prestamo = new Prestamo();
-        prestamo.setAñoPublicacion(2025);
+        prestamo.setFechaPrestamo(LocalDate.now());
         prestamo.setActivo(true);
         prestamo.setUsuario(usuario);
         prestamo.setMateriales(List.of(libro));
@@ -164,7 +165,7 @@ class PrestamoServiceIT {
         libroRepository.save(libro2);
 
         Prestamo prestamo = new Prestamo();
-        prestamo.setAñoPublicacion(2025);
+        prestamo.setFechaPrestamo(LocalDate.now());
         prestamo.setActivo(true);
         prestamo.setUsuario(usuario);
         prestamo.setMateriales(List.of(libro1, libro2));
@@ -201,7 +202,7 @@ class PrestamoServiceIT {
 
 
         Prestamo prestamo = new Prestamo();
-        prestamo.setAñoPublicacion(2025);
+        prestamo.setFechaPrestamo(LocalDate.now());
         prestamo.setActivo(true);
         prestamo.setUsuario(usuario);
         prestamo.setMateriales(new ArrayList<>(List.of(libro1))); //Para que la lista sea mutable. Si no

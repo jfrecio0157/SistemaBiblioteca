@@ -63,7 +63,7 @@ public class PrestamoDTOService {
 
         return new PrestamoDTO(
                 prestamo.getId(),
-                prestamo.getAñoPublicacion(),
+                prestamo.getFechaPrestamo(),
                 usuario.getNombre(),
                 materialTituloList,
                 prestamo.isActivo()
@@ -77,7 +77,7 @@ public class PrestamoDTOService {
 
     public Prestamo convertirDesdeDTO(PrestamoDTO dto) {
         Prestamo prestamo = new Prestamo();
-        prestamo.setAñoPublicacion(dto.getAñoPublicacion());
+        prestamo.setFechaPrestamo(dto.getFechaPrestamo());
         prestamo.setActivo(true);
 
         //Se busca el usuario dado su id. Si no lo encuentra, se devuelve una excepcion.

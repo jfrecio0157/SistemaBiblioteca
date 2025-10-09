@@ -309,7 +309,7 @@ public class ConsolaPrestamo {
     Prestamo crearPrestamo(Usuario usuario, MaterialBiblioteca materialBiblioteca) {
         Prestamo prestamo = new Prestamo();
         prestamo.setUsuario(usuario);
-        prestamo.setAñoPublicacion(LocalDate.now().getYear());
+        prestamo.setFechaPrestamo(LocalDate.now()); //Fecha actual como fecha del prestamo.
         prestamo.setMateriales(List.of(materialBiblioteca));
         prestamo.setActivo(true);
         return prestamo;
