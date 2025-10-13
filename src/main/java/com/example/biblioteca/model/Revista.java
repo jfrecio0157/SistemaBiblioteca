@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 
 @EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(name="Revista")
+//@Table(name="Revista") En el jdk 17 -> No se define como @Table porque MaterialBiblioteca ya está definida como @Table
 @Data //Genera automáticamente getters, setters, toString(), equals() y hashCode()
 @NoArgsConstructor //Genera un constructor sin argumentos.
 @AllArgsConstructor //Genera un constructor con todos los campos.

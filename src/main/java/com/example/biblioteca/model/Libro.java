@@ -9,7 +9,7 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(name = "libro")
+//@Table(name = "libro") En el jdk 17 -> No se define como @Table porque MaterialBiblioteca ya está definida como @Table
 @Getter
 @Setter
 @NoArgsConstructor //Genera un constructor sin argumentos.

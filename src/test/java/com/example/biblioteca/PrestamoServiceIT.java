@@ -74,16 +74,16 @@ class PrestamoServiceIT {
 
 
         Usuario usuario = new Usuario();
-        usuario.setNombre("LUIS FERNANDEZ");
-        usuario.setEmail("LUISFER@GMAIL.COM");
+        usuario.setNombre("PEPE FERNANDEZ");
+        usuario.setEmail("PEPEFER@GMAIL.COM");
         usuarioRepository.save(usuario);
 
-        Autor autor = new Autor("Eduardo el Pescador");
+        Autor autor = new Autor("Pepe el Faraon");
         autorRepository.save(autor);
 
         Libro libro = new Libro();
-        libro.setTitulo("Hoy de pesca");
-        libro.setIsbn("4567");
+        libro.setTitulo("Hoy en Egipto");
+        libro.setIsbn("2222");
         libro.setAutores(List.of(autor));
         libroRepository.save(libro);
 
@@ -109,8 +109,8 @@ class PrestamoServiceIT {
     void buscarPrestamoByUsuarioIdAndActivo () {
 
         Usuario usuario = new Usuario();
-        usuario.setNombre("RAQUEL FERNANDEZ");
-        usuario.setEmail("RAQUELFER@GMAIL.COM");
+        usuario.setNombre("SERGIO FERNANDEZ");
+        usuario.setEmail("SERGIO FER@GMAIL.COM");
         usuarioRepository.save(usuario);
 
         Autor autor = new Autor("Joan Manuel Serrat");
@@ -144,22 +144,22 @@ class PrestamoServiceIT {
     void obtenerMaterialIdsPorPrestamos () {
 
         Usuario usuario = new Usuario();
-        usuario.setNombre("RAQUEL FERNANDEZ");
-        usuario.setEmail("RAQUELFER@GMAIL.COM");
+        usuario.setNombre("LUIS GARCIA");
+        usuario.setEmail("LUISGARCIA@GMAIL.COM");
         usuarioRepository.save(usuario);
 
-        Autor autor = new Autor("Joan Manuel Serrat");
+        Autor autor = new Autor("Joan Sabina");
         autorRepository.save(autor);
 
         Libro libro1 = new Libro();
-        libro1.setTitulo("HOY PUEDE SER UN GRAN DIA");
-        libro1.setIsbn("7264");
+        libro1.setTitulo("19 DIAS Y 500 NOCHES");
+        libro1.setIsbn("1111");
         libro1.setAutores(List.of(autor));
         libroRepository.save(libro1);
 
 
         Libro libro2 = new Libro();
-        libro2.setTitulo("NO HAGO OTRA COSA QUE PENSAR EN TI");
+        libro2.setTitulo("PACTO ENTRE CABALLEROS");
         libro2.setIsbn("8426");
         libro2.setAutores(List.of(autor));
         libroRepository.save(libro2);
@@ -187,16 +187,16 @@ class PrestamoServiceIT {
     void desactivarPrestamoConMaterial () {
 
         Usuario usuario = new Usuario();
-        usuario.setNombre("RAQUEL FERNANDEZ");
-        usuario.setEmail("RAQUELFER@GMAIL.COM");
+        usuario.setNombre("MARIA DEBE");
+        usuario.setEmail("MARIADEBE@GMAIL.COM");
         usuarioRepository.save(usuario);
 
-        Autor autor = new Autor("Joan Manuel Serrat");
+        Autor autor = new Autor("LA FUGA");
         autorRepository.save(autor);
 
         Libro libro1 = new Libro();
-        libro1.setTitulo("HOY PUEDE SER UN GRAN DIA");
-        libro1.setIsbn("7264");
+        libro1.setTitulo("NEGOCIANDO GASOLINA");
+        libro1.setIsbn("3333");
         libro1.setAutores(List.of(autor));
         libroRepository.save(libro1);
 
