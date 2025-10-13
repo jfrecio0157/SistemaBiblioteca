@@ -335,25 +335,25 @@ public class ConsolaAutorTest {
     }
 
     @Test
-    public void mostrarMenuAutor () {
-        consolaSpy.mostrarMenuAutor();
+    public void mostrarMenuAutor() {
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent, true, StandardCharsets.UTF_8));
+
+        consolaSpy.mostrarMenuAutor(); // Ahora sí se captura la salida
 
         String actual = outContent.toString(StandardCharsets.UTF_8);
         actual = actual.replace("\r\n", "\n"); // Normaliza saltos de línea
 
-        String expectedText="""
-                \n-- Menu autor ---
-                A.- Alta autor
-                B.- Baja autor
-                C.- Consulta autor
-                S.- Salir al menú principal
-                Elige una opción:""";
+        String expectedText = """
+            \n-- Menu autor ---
+            A.- Alta autor
+            B.- Baja autor
+            C.- Consulta autor
+            S.- Salir al menú principal
+            Elige una opción:""";
 
-        // Como usas println, se añade un salto extra al final
         String expected = expectedText + "\n";
 
-        //Assert
         assertEquals(expected, actual);
-
     }
 }
