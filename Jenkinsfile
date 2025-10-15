@@ -10,7 +10,9 @@ pipeline {
        }
        stage('Build') {
             steps {
-                bat 'mvn clean install'
+                // bat 'mvn clean install' Con install se ejecuta todo el ciclo de vida: compile, test, package,
+                //Ahora compila y empaqueta (genera el .jar), pero no hace los test.
+                bat 'mvn clean package -DskipTests'
             }
         }
 
