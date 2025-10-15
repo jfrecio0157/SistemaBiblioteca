@@ -34,19 +34,15 @@ pipeline {
     }
 
     post {
-        success{
-            emailext {
-             subject: "Build Exitosa: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-             body: "La build ha sido exitosa. Ver detalles en ${env.BUILD_URL}",
-             to: 'jfrecios@gmail.com'
-}
+        success {
+            mail to: 'jfrecio@gmail.com',
+                 subject: "Build Exitosa: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: "La build ha sido exitosa. Ver detalles en ${env.BUILD_URL}"
         }
         failure {
-            emailext (
-                subject: "Fallo en el pipeline: ${env.JOB_NAME}",
-                body: "El job ${env.JOB_NAME} ha fallado en la etapa ${env.STAGE_NAME}.",
-                to: 'jfrecios@mailtrap.io'
-            )
+            mail to: 'jfrecio@gmail.com',
+                 subject: "Build Fallida: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: "La build ha fallado. Revisa Jenkins en ${env.BUILD_URL}"
         }
     }
 
