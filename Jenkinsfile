@@ -32,4 +32,15 @@ pipeline {
             }
         }
     }
+
+    post {
+        failure {
+            emailext (
+                subject: "Fallo en el pipeline: ${env.JOB_NAME}",
+                body: "El job ${env.JOB_NAME} ha fallado en la etapa ${env.STAGE_NAME}.",
+                to: 'jfrecios@mailtrap.io'
+            )
+        }
+    }
+
 }
