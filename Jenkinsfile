@@ -34,6 +34,13 @@ pipeline {
     }
 
     post {
+        success{
+            emailext {
+             subject: "Build Exitosa: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+             body: "La build ha sido exitosa. Ver detalles en ${env.BUILD_URL}",
+             to: 'jfrecios@gmail.com'
+}
+        }
         failure {
             emailext (
                 subject: "Fallo en el pipeline: ${env.JOB_NAME}",
