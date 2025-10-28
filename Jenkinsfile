@@ -1,5 +1,14 @@
+//Library común
+//Métodos que contiene: sendMail
+library identifier: 'jenkins-demo-library.git@main',
+        retriever: modernSCM([$class: 'GitSCMSource', remote: 'https://github.com/jfrecio0157/jenkins-demo-library.git'])
+
 pipeline {
     agent any
+
+    environment {
+        MAIL = 'jfrecio@gmail.com'
+    }
 
     stages {
        stage('Checkout') {
@@ -35,15 +44,14 @@ pipeline {
 
     post {
         success {
-            mail to: 'jfrecio@gmail.com',
-                 subject: "Build Exitosa: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                 body: "La build ha sido exitosa. Ver detalles en ${env.BUILD_URL}"
+            script{
+                 sendMail.success (mail: "${MAIL}")
+            }
         }
         failure {
-            mail to: 'jfrecio@gmail.com',
-                 subject: "Build Fallida: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                 body: "La build ha fallado. Revisa Jenkins en ${env.BUILD_URL}"
+            script{
+                 sendMail.failure (mail: "${MAIL}")
+            }
         }
     }
-
 }
