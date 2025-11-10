@@ -116,7 +116,7 @@ public class ConsolaAutor {
             return null;
         }
 
-        if (!(autor.getLibro().isEmpty())) {
+        if (!(autor.getLibros().isEmpty())) {
             commonUtil.mostrarMensaje("El autor \"" + autor.getNombre() + "\" no se puede dar de baja. Tiene libros en la biblioteca");
             return null;
         }
@@ -124,7 +124,7 @@ public class ConsolaAutor {
     }
 
     void  mostrarLibros(Autor autor){
-        List<Libro> librosL = autor.getLibro();
+        List<Libro> librosL = autor.getLibros();
         if (librosL == null || librosL.isEmpty()){
             commonUtil.mostrarMensaje("Este autor no tiene libros registrados");
         }else {

@@ -57,7 +57,7 @@ public class LibroDTOService {
         return new LibroDTO(
                 libro.getId(),
                 libro.getIsbn(),
-                libro.getAñoPublicacion(),
+                libro.getAnio_publicacion(),
                 libro.getTitulo(),
                 nombresAutores,
                 libro.getTotales(),
@@ -104,7 +104,7 @@ public class LibroDTOService {
 
         Libro libro = new Libro();
         libro.setIsbn(dto.getIsbn());
-        libro.setAñoPublicacion(dto.getAñoPublicacion());
+        libro.setAnio_publicacion(dto.getAñoPublicacion());
         libro.setTitulo(dto.getTitulo().toUpperCase());
 
         // Normalizar nombres: descartar nulos/vacíos, recortar espacios y deduplicar
@@ -162,7 +162,7 @@ public class LibroDTOService {
                 .orElseThrow(() -> new LibroNoEncontradoException("Libro no encontrado con titulo: " + titulo));
 
         libro.setIsbn(dto.getIsbn());
-        libro.setAñoPublicacion(dto.getAñoPublicacion());
+        libro.setAnio_publicacion(dto.getAñoPublicacion());
         libro.setTitulo(dto.getTitulo().toUpperCase()); //En la línea de comandos se pone el título viejo y en el body el título nuevo.
 
         //Dado una lista de autores, se obtiene cada uno de los autores.

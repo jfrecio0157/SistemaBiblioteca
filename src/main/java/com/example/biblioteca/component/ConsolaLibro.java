@@ -182,7 +182,7 @@ public class ConsolaLibro {
 
     void mostrarMenuLibro() {
         System.out.println("""
-                        \\n--- Menú libro ---
+                        --- Menú libro ---
                         A.- Alta libro
                         B.- Baja libro
                         C.- Consulta libro por Isbn
@@ -200,7 +200,7 @@ public class ConsolaLibro {
                 Título: %s
                 Año de publicación: %d
                 Autores:
-                """, libro.getIsbn(), libro.getTitulo(), libro.getAñoPublicacion());
+                """, libro.getIsbn(), libro.getTitulo(), libro.getAnio_publicacion());
 
         libro.getAutores().forEach(autor ->
                 System.out.printf("- %s%n", autor.getNombre()));
@@ -227,7 +227,7 @@ public class ConsolaLibro {
 
         //Año de publicacion
         commonUtil.mostrarMensaje("Año de publicación");
-        libro.setAñoPublicacion(commonUtil.leerEntero());
+        libro.setAnio_publicacion(commonUtil.leerEntero());
 
         //Solicitar autores
         do {

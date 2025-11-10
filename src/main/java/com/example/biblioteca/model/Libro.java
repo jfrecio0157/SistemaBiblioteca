@@ -22,8 +22,8 @@ public class Libro extends MaterialBiblioteca{
     private String isbn;
 
     @NotNull(message = "El libro debe tener un año de publicación")
-    @Column(name = "añoPublicacion")
-    private int añoPublicacion;
+    @Column(name = "anio_publicacion")
+    private int anio_publicacion;
 
     /**
      * Para establecer una relación entra las tablas Libro y Autor como un libro puede tener varios autores
@@ -31,9 +31,9 @@ public class Libro extends MaterialBiblioteca{
      */
     @ManyToMany
     @JoinTable(
-            name = "LibroAutor",
-            joinColumns = @JoinColumn(name = "libroIsbn"),
-            inverseJoinColumns = @JoinColumn(name = "AutorId")
+            name = "libro_autor",
+            joinColumns = @JoinColumn(name = "libro_id"),
+            inverseJoinColumns = @JoinColumn(name = "autor_id")
     )
     @NotEmpty(message="Un libro debe tener al menos un autor")
     private List<Autor> autores;

@@ -310,7 +310,7 @@ public class ConsolaLibroTest {
         Libro libroMock = new Libro();
         libroMock.setIsbn(isbn);
         libroMock.setTitulo("Título de prueba");
-        libroMock.setAñoPublicacion(2020);
+        libroMock.setAnio_publicacion(2020);
         libroMock.setTotales(5);
         libroMock.setDisponibles(5);
         libroMock.setAutores(List.of(new Autor("Autor Uno"), new Autor("Autor Dos")));
@@ -377,7 +377,7 @@ public class ConsolaLibroTest {
         Libro libroMock = new Libro();
         libroMock.setIsbn("1234");
         libroMock.setTitulo("TITULO PRUEBA");
-        libroMock.setAñoPublicacion(2020);
+        libroMock.setAnio_publicacion(2020);
         libroMock.setTotales(5);
         libroMock.setDisponibles(5);
         libroMock.setAutores(List.of(new Autor("Autor Uno"), new Autor("Autor Dos")));
@@ -465,7 +465,7 @@ public class ConsolaLibroTest {
         Libro libroCompleto1Mock = new Libro();
         libroCompleto1Mock.setIsbn("1234");
         libroCompleto1Mock.setTitulo("TITULO 1 PRUEBA");
-        libroCompleto1Mock.setAñoPublicacion(2020);
+        libroCompleto1Mock.setAnio_publicacion(2020);
         libroCompleto1Mock.setTotales(5);
         libroCompleto1Mock.setDisponibles(5);
         libroCompleto1Mock.setAutores(List.of(new Autor("Autor Uno"), new Autor("Autor Dos")));
@@ -473,7 +473,7 @@ public class ConsolaLibroTest {
         Libro libroCompleto2Mock = new Libro();
         libroCompleto2Mock.setIsbn("5678");
         libroCompleto2Mock.setTitulo("TITULO 2 PRUEBA");
-        libroCompleto2Mock.setAñoPublicacion(2021);
+        libroCompleto2Mock.setAnio_publicacion(2021);
         libroCompleto2Mock.setTotales(6);
         libroCompleto2Mock.setDisponibles(6);
         libroCompleto2Mock.setAutores(List.of(new Autor("Autor Tres"), new Autor("Autor Cuatro")));
@@ -557,7 +557,7 @@ public class ConsolaLibroTest {
         // Assert
         assertEquals("1234", libro.getIsbn());
         assertEquals("Título de prueba", libro.getTitulo());
-        assertEquals(2020, libro.getAñoPublicacion());
+        assertEquals(2020, libro.getAnio_publicacion());
         assertEquals(5, libro.getTotales());
         assertEquals(5, libro.getDisponibles());
 
@@ -605,7 +605,7 @@ public class ConsolaLibroTest {
         Libro libroCompletoMock = new Libro();
         libroCompletoMock.setIsbn("1234");
         libroCompletoMock.setTitulo("TITULO PRUEBA");
-        libroCompletoMock.setAñoPublicacion(2020);
+        libroCompletoMock.setAnio_publicacion(2020);
         libroCompletoMock.setTotales(5);
         libroCompletoMock.setDisponibles(5);
         libroCompletoMock.setAutores(List.of(new Autor("Autor Uno"), new Autor("Autor Dos")));
@@ -618,7 +618,7 @@ public class ConsolaLibroTest {
         // Assert
         assertEquals("1234", libro.getIsbn());
         assertEquals("TITULO PRUEBA", libro.getTitulo());
-        assertEquals(2020, libro.getAñoPublicacion());
+        assertEquals(2020, libro.getAnio_publicacion());
         assertEquals(5, libro.getTotales());
         assertEquals(5, libro.getDisponibles());
 

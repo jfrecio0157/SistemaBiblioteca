@@ -48,7 +48,7 @@ public class AutorDTOService {
     public AutorDTO convertirAAutorDTO (Autor autor){
         Objects.requireNonNull(autor, "El autor no puede ser nulo");
 
-        var listaLibrosId = (autor.getLibro() == null ? List.<Libro>of() : autor.getLibro())
+        var listaLibrosId = (autor.getLibros() == null ? List.<Libro>of() : autor.getLibros())
                 .stream()
                 .filter(Objects::nonNull)
                 .map(Libro::getId)
@@ -76,7 +76,7 @@ public class AutorDTOService {
             }
         }
 
-        autor.setLibro(libroList);
+        autor.setLibros(libroList);
         return autor;
     }
 
@@ -133,7 +133,7 @@ public class AutorDTOService {
 
             libroList.add(libro);
         }
-        autor.setLibro(libroList);
+        autor.setLibros(libroList);
 
         return (convertirAAutorDTO(autorRepository.save(autor)));
     }

@@ -55,7 +55,7 @@ class LibroServiceIT {
         libro.setTitulo("El libro de la selva");
         libro.setAutores(List.of(autor));
         libro.setIsbn("1234");
-        libro.setAñoPublicacion(1964);
+        libro.setAnio_publicacion(1964);
         libro.setTotales(10);
         libro.setDisponibles(10);
 
@@ -77,7 +77,7 @@ class LibroServiceIT {
         libro.setAutores(List.of()); //Lista vacia de autores
         libro.setTitulo("Libro desconocido");
         libro.setIsbn("1246");
-        libro.setAñoPublicacion(2000);
+        libro.setAnio_publicacion(2000);
         libro.setTotales(7);
         libro.setDisponibles(7);
 
@@ -106,7 +106,7 @@ class LibroServiceIT {
         libro.setTitulo("La vuelta al mundo en 80 días");
         libro.setAutores(List.of(autor));
         libro.setIsbn("1578");
-        libro.setAñoPublicacion(1972);
+        libro.setAnio_publicacion(1972);
         libro.setTotales(10);
         libro.setDisponibles(10);
         libroRepository.save(libro);
@@ -119,7 +119,7 @@ class LibroServiceIT {
         assertEquals("La vuelta al mundo en 80 días",resultado.get(0).getTitulo());
         assertEquals("Julio Verne",resultado.get(0).getAutores().get(0).getNombre());
         assertEquals("1578",resultado.get(0).getIsbn());
-        assertEquals(1972,resultado.get(0).getAñoPublicacion());
+        assertEquals(1972,resultado.get(0).getAnio_publicacion());
         assertEquals(10,resultado.get(0).getTotales());
         assertEquals(10,resultado.get(0).getDisponibles());
 
@@ -139,7 +139,7 @@ class LibroServiceIT {
         libro.setTitulo("Viaje al centro de la tierra");
         libro.setAutores(List.of(autor));
         libro.setIsbn("1361");
-        libro.setAñoPublicacion(1972);
+        libro.setAnio_publicacion(1972);
         libro.setTotales(10);
         libro.setDisponibles(10);
         libroRepository.save(libro);
@@ -152,7 +152,7 @@ class LibroServiceIT {
         assertEquals("Viaje al centro de la tierra",resultado.getTitulo());
         assertEquals("Julio Verne", resultado.getAutores().get(0).getNombre());
         assertEquals("1361",resultado.getIsbn());
-        assertEquals(1972,resultado.getAñoPublicacion());
+        assertEquals(1972,resultado.getAnio_publicacion());
         assertEquals(10,resultado.getTotales());
         assertEquals(10,resultado.getDisponibles());
     }
@@ -171,7 +171,7 @@ class LibroServiceIT {
         libro.setTitulo("Viaje a Marte");
         libro.setAutores(List.of(autor));
         libro.setIsbn("1578");
-        libro.setAñoPublicacion(1972);
+        libro.setAnio_publicacion(1972);
         libro.setTotales(10);
         libro.setDisponibles(10);
         libroRepository.save(libro);
@@ -197,7 +197,7 @@ class LibroServiceIT {
         libro.setTitulo("La vuelta al mundo en 80 días");
         libro.setAutores(List.of(autor));
         libro.setIsbn("1578");
-        libro.setAñoPublicacion(1972);
+        libro.setAnio_publicacion(1972);
         libro.setTotales(10);
         libro.setDisponibles(10);
         libroRepository.save(libro);
@@ -210,7 +210,7 @@ class LibroServiceIT {
         assertEquals("La vuelta al mundo en 80 días",resultado.getTitulo());
         assertEquals("Julio Verne", resultado.getAutores().get(0).getNombre());
         assertEquals("1578",resultado.getIsbn());
-        assertEquals(1972,resultado.getAñoPublicacion());
+        assertEquals(1972,resultado.getAnio_publicacion());
         assertEquals(10,resultado.getTotales());
         assertEquals(10,resultado.getDisponibles());
     }
@@ -229,7 +229,7 @@ class LibroServiceIT {
         libro.setTitulo("La vuelta al mundo en 80 días");
         libro.setAutores(List.of(autor));
         libro.setIsbn("1578");
-        libro.setAñoPublicacion(1972);
+        libro.setAnio_publicacion(1972);
         libro.setTotales(10);
         libro.setDisponibles(10);
         libroRepository.save(libro);
@@ -256,7 +256,7 @@ class LibroServiceIT {
         libro.setTitulo("La vuelta al mundo en 80 días");
         libro.setAutores(List.of(autor));
         libro.setIsbn("1578");
-        libro.setAñoPublicacion(1972);
+        libro.setAnio_publicacion(1972);
         libro.setTotales(10);
         libro.setDisponibles(10);
         libroRepository.save(libro);

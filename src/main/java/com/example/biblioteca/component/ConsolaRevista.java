@@ -17,7 +17,6 @@ import static com.example.biblioteca.util.ConstantesMenu.*;
 
 
 @Component
-@Transactional
 public class ConsolaRevista {
 
     private final Scanner scanner = new Scanner(System.in);
