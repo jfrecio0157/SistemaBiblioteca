@@ -17,7 +17,7 @@ public interface AutorRepository extends JpaRepository<Autor,Integer> {
     FETCH indica que quieres cargar los libros inmediatamente, no de forma perezosa.
     Esto evita que Hibernate haga una segunda consulta cuando accedas a autor.getLibros().
     */
-    @Query("SELECT DISTINCT a FROM Autor a LEFT JOIN FETCH a.libro WHERE a.nombre = :nombre")
+    @Query("SELECT DISTINCT a FROM Autor a LEFT JOIN FETCH a.libros WHERE a.nombre = :nombre")
     Optional<Autor> findByNombre(
             @Param("nombre") String nombre)
             ;

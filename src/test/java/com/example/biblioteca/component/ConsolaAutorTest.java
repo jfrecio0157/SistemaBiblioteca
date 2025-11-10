@@ -157,7 +157,7 @@ public class ConsolaAutorTest {
         Libro libroMock = new Libro();
         libroMock.setTitulo("El pollo Pepe");
 
-        autorMock.setLibro(List.of(libroMock));
+        autorMock.setLibros(List.of(libroMock));
 
         doReturn(autorMock).when(consolaSpy).obtenerAutor();
 
@@ -203,7 +203,7 @@ public class ConsolaAutorTest {
     @Test
     void mostrarLibros_cuandoNoHaylibros_deberiaMostrarMensaje() {
         Autor autor = new Autor();
-        autor.setLibro(List.of());
+        autor.setLibros(List.of());
 
         consolaSpy.mostrarLibros(autor);
 
@@ -223,7 +223,7 @@ public class ConsolaAutorTest {
         libro2.setTitulo("Noche estrellada");
 
         Autor autor = new Autor();
-        autor.setLibro(List.of(libro1, libro2));
+        autor.setLibros(List.of(libro1, libro2));
 
         //Act
         consolaSpy.mostrarLibros(autor);
@@ -259,7 +259,7 @@ public class ConsolaAutorTest {
 
         Autor autorMock = new Autor();
         autorMock.setNombre("AUTOR CON LIBROS");
-        autorMock.setLibro(List.of(new Libro())); // tiene libros
+        autorMock.setLibros(List.of(new Libro())); // tiene libros
 
         when(autorService.buscarAutorByNombre("AUTOR CON LIBROS")).thenReturn(autorMock);
 
@@ -280,7 +280,7 @@ public class ConsolaAutorTest {
 
         Autor autorMock = new Autor();
         autorMock.setNombre("AUTOR LIBRE");
-        autorMock.setLibro(List.of()); // sin libros
+        autorMock.setLibros(List.of()); // sin libros
 
         when(autorService.buscarAutorByNombre("AUTOR LIBRE")).thenReturn(autorMock);
 

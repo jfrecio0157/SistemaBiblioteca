@@ -13,6 +13,8 @@ import java.util.List;
 @Data //Genera automáticamente getters, setters, toString(), equals() y hashCode()
 @NoArgsConstructor //Genera un constructor sin argumentos.
 @AllArgsConstructor //Genera un constructor con todos los campos.
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "dtype", discriminatorType = DiscriminatorType.STRING)  //dtype para diferenciar el tipo de material. Hibernate se encarga de rellenarlo automáticamente (Libro o Revista)
 
 public abstract class MaterialBiblioteca {
     @Id

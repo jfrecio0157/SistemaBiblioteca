@@ -24,7 +24,7 @@ public class Autor {
     private String nombre;
 
     @ManyToMany(mappedBy = "autores", cascade = CascadeType.ALL)
-    private List<Libro> libro;
+    private List<Libro> libros;
 
     //Constructor
     public Autor(String nombre) {
