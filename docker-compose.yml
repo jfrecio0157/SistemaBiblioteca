@@ -18,8 +18,8 @@ services:
     environment:
       MARIADB_ROOT_PASSWORD: rootpass
       MARIADB_DATABASE: biblioteca
-      MARIADB_USER: root
-      MARIADB_PASSWORD: CuentaBBDD
+      MARIADB_USER: paco
+      MARIADB_PASSWORD: pacopass
     ports:
       - "3306:3306"
 
@@ -29,7 +29,9 @@ services:
     ports:
       - "8081:8081"
     depends_on:
+      - mariadb
       - sonarqube
+    restart: always
 
 volumes:
   sonarqube_data:
