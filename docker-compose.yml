@@ -11,6 +11,17 @@ services:
       - sonarqube_data:/opt/sonarqube/data
       - sonarqube_logs:/opt/sonarqube/logs
       - sonarqube_extensions:/opt/sonarqube/extensions
+  mariadb:
+    image: mariadb:11
+    container_name: sistemabiblioteca_db
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: rootpass
+      MARIADB_DATABASE: biblioteca
+      MARIADB_USER: root
+      MARIADB_PASSWORD: CuentaBBDD
+    ports:
+      - "3306:3306"
 
   sistemabiblioteca:
     build: .
