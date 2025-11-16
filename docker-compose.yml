@@ -1,5 +1,6 @@
 version: "3.9"
 services:
+  #los servicios sonarqube y mariadb no necesitan interaccion con el usuario, se pueden levantar en segundo plano como servicios
   sonarqube:
     image: sonarqube:community
     container_name: sonarqube
@@ -23,15 +24,17 @@ services:
     ports:
       - "3306:3306"
 
-  sistemabiblioteca:
-    build: .
-    container_name: sistemabiblioteca
-    ports:
-      - "8081:8081"
-    depends_on:
-      - mariadb
-      - sonarqube
-    restart: always
+#sistemabiblioteca no se puede levantar asi porque necesitar interaccion con el usuario, que debe usar teclado y consola para moverse por la biblioteca.
+#se crea un script arrancar_sistemabiblioteca.sh para arrancar el sistemaBiblioteca
+#  sistemabiblioteca:
+#    build: .
+#    container_name: sistemabiblioteca
+#    ports:
+#      - "8081:8081"
+#    depends_on:
+#      - mariadb
+#      - sonarqube
+#    restart: always
 
 volumes:
   sonarqube_data:
