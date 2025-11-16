@@ -57,9 +57,14 @@ public class BibliotecaCliRunner implements CommandLineRunner {
                 case OPCION_REVISTA  -> consolaRevista.menuRevista();
                 case OPCION_PRESTAMO -> consolaPrestamo.menuPrestamo();
                 case OPCION_AUTOR    -> consolaAutor.menuAutor();
-                case OPCION_SALIR    -> System.out.println("---- !!! Hasta pronto !!! ----");
+                case OPCION_SALIR    -> salir();
                 default              -> commonService.mostrarError();
             }
         } while (!OPCION_SALIR.equals(opcion));
+    }
+
+    public void salir (){
+        System.out.println("---- !!! Hasta pronto !!! ----");
+        System.exit(0);
     }
 }
